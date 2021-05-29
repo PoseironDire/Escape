@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj": {}
+    "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj": {
+    "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
+        "projectUniqueName": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
         "projectName": "Game",
-        "projectPath": "c:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
+        "projectPath": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
         "packagesPath": "C:\\Users\\Edvin\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\obj\\",
+        "outputPath": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Edvin\\AppData\\Roaming\\NuGet\\NuGet.Config"
