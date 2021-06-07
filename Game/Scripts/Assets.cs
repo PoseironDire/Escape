@@ -15,4 +15,5 @@ public class Assets
     public static Color guideBGLighter = new Color(70, 120, 120, 255);
     public static Color botColor = new Color(200, 0, 0, 255);
     public static Color botRadarColor = new Color(200, 0, 0, 100);
+    public static Color scannerColor = new Color(200, 100, 0, 255);
 }

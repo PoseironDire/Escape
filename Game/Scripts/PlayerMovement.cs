@@ -7,21 +7,21 @@ public class PlayerMovement
     public void Move()
     {
         //Player Inputs
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_W) && Player.position.Y > 0 + Player.playerSize / 2)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_W) && Player.playerPos.Y > 0 + Player.playerSize / 2)
         {
-            Player.position.Y -= Player.speed;
+            Player.playerPos.Y -= Player.speed;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && Player.position.X > 0 + Player.playerSize / 2)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && Player.playerPos.X > 0 + Player.playerSize / 2)
         {
-            Player.position.X -= Player.speed;
+            Player.playerPos.X -= Player.speed;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_S) && Player.position.Y < Program.h - Player.playerSize / 2)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_S) && Player.playerPos.Y < Program.h - Player.playerSize / 2)
         {
-            Player.position.Y += Player.speed;
+            Player.playerPos.Y += Player.speed;
         }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && Player.position.X < Program.w - Player.playerSize / 2)
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && Player.playerPos.X < Program.w - Player.playerSize / 2)
         {
-            Player.position.X += Player.speed;
+            Player.playerPos.X += Player.speed;
         }
 
         //Texture References

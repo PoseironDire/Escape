@@ -3,10 +3,13 @@ using Raylib_cs;
 
 public class Bot
 {
-    // Bot settings
-    public static Vector2 position2 = new Vector2(Program.w / 2 + 200, Program.h / 2);
-    public static int x2 = (int)position2.X;
-    public static int y2 = (int)position2.Y;
+    // Bot & Scanner settings
+    public static Vector2 botPos = new Vector2(Program.w / 2, Program.h - 100);
+    public static Vector2 scannerPos = new Vector2();
+    public static int x2 = (int)botPos.X;
+    public static int y2 = (int)botPos.Y;
+    public static int x3 = (int)scannerPos.X;
+    public static int y3 = (int)scannerPos.Y;
     public static bool resetPos = false;
     public static Vector2 getBotPos = new Vector2();
     public static Vector2 botMovement = new Vector2();
@@ -14,8 +17,11 @@ public class Bot
     public void AI()
     {
         //Convert float to int
-        x2 = (int)position2.X;
-        y2 = (int)position2.Y;
+        x2 = (int)botPos.X;
+        y2 = (int)botPos.Y;
+        x3 = (int)scannerPos.X;
+        y3 = (int)scannerPos.Y;
+
 
         //Bot Movement
         if (Program.State == "Game")
@@ -33,49 +39,58 @@ public class Bot
                     botMovement.Y = Program.generator.Next(-10, 10);
                     i = 0;
                 }
-                position2.X += botMovement.X;
-                position2.Y += botMovement.Y;
+                botPos.X += botMovement.X;
+                botPos.Y += botMovement.Y;
             }
             //Return From Edge Screen
             else
             {
-                position2.X += botMovement.X;
-                position2.Y += botMovement.Y;
+                botPos.X += botMovement.X;
+                botPos.Y += botMovement.Y;
             }
 
             //Check If Bot Is Out Of Bounds
-            if (position2.X > Program.w / 2 || position2.Y > Program.h / 2)
+            if (botPos.X > Program.w / 2 || botPos.Y > Program.h / 2)
             {
                 resetPos = false;
             }
 
-            if (position2.X < Player.playerSize / 2)
+            if (botPos.X < Player.playerSize / 2)
             {
                 resetPos = true;
                 getBotPos.X = x2;
                 botMovement.X = ((getBotPos.X / Program.w) + 15);
             }
-            if (position2.X > Program.w - Player.playerSize / 2)
+            if (botPos.X > Program.w - Player.playerSize / 2)
             {
                 resetPos = true;
                 getBotPos.X = x2;
                 botMovement.X = ((getBotPos.X / Program.w) - 15);
             }
-            if (position2.Y < Player.playerSize / 2)
+            if (botPos.Y < Player.playerSize / 2)
             {
                 resetPos = true;
                 getBotPos.Y = y2;
                 botMovement.Y = ((getBotPos.Y / Program.h) + 15);
             }
-            if (position2.Y > Program.h - Player.playerSize / 2)
+            if (botPos.Y > Program.h - Player.playerSize / 2)
             {
                 resetPos = true;
                 getBotPos.Y = y2;
                 botMovement.Y = ((getBotPos.Y / Program.h) - 15);
             }
         }
+        x3 = (x2 + Player.x) / 2;
+        y3 = (y2 + Player.y) / 2;
         //Draw Bot
         Raylib.DrawCircle(x2, y2, Player.playerSize * 2, Assets.botRadarColor);
         Raylib.DrawCircle(x2, y2, Player.playerSize / 2, Assets.botColor);
+
+        //Draw Scanner
+        bool areOverlapping = Raylib.CheckCollisionCircles(botPos, Player.playerSize * 2, Player.playerPos, Player.playerSize / 2);
+        if (areOverlapping == true)
+        {
+            Raylib.DrawCircle(x3, y3, Player.playerSize / 4, Assets.scannerColor);
+        }
     }
 }

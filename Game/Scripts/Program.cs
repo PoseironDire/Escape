@@ -43,6 +43,8 @@ public class Program
             }
             if (State == "Guide")
             {
+                Bot.AI();
+                Texture.ShowPlayer();
                 Menus.Guide();
                 Texture.Steve();
             }
@@ -50,19 +52,30 @@ public class Program
             {
                 Controller.Move();
             }
-            else if (State == "Lose" || State == "Win")
+            else if (State == "Lose")
             {
+                P1.Points();
+                Texture.Crosser();
+                P1.DrawReset();
+            }
+            else if (State == "Win")
+            {
+                P1.Points();
                 Texture.Crosser();
                 P1.DrawReset();
             }
 
             if (State != "Start" && State != "Guide")
             {
+                P1.Points();
                 P1.Draw();
                 Texture.ShowPlayer();
                 Bot.AI();
-                P1.Points();
                 Menus.CheckWin();
+            }
+            else
+            {
+                Menus.Cursor();
             }
             Raylib.EndDrawing();
             UpdateVisual = true;

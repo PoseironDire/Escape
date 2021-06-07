@@ -25,7 +25,7 @@ public class Textures
             Raylib.DrawTexturePro(
             playerTexture,
             new Rectangle(0, 0, 16, 16), // Source
-            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
             Player.rotation,
             Color.WHITE);
@@ -38,7 +38,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                 playerTexture,
                 new Rectangle(16, 0, 16, 16), // Source
-                new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                 new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                 Player.rotation,
                 Color.WHITE);
@@ -49,7 +49,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                             playerTexture,
                             new Rectangle(32, 0, 16, 16), // Source
-                            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                             Player.rotation,
                             Color.WHITE);
@@ -60,7 +60,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                             playerTexture,
                             new Rectangle(0, 16, 16, 16), // Source
-                            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                             Player.rotation,
                             Color.WHITE);
@@ -71,7 +71,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                             playerTexture,
                             new Rectangle(16, 16, 16, 16), // Source
-                            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                             Player.rotation,
                             Color.WHITE);
@@ -82,7 +82,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                 playerTexture,
                 new Rectangle(32, 16, 16, 16), // Source
-                new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                 new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                 Player.rotation,
                 Color.WHITE);
@@ -93,7 +93,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                             playerTexture,
                             new Rectangle(0, 32, 16, 16), // Source
-                            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                             Player.rotation,
                             Color.WHITE);
@@ -104,7 +104,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                             playerTexture,
                             new Rectangle(16, 32, 16, 16), // Source
-                            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                             Player.rotation,
                             Color.WHITE);
@@ -115,7 +115,7 @@ public class Textures
                 Raylib.DrawTexturePro(
                             playerTexture,
                             new Rectangle(32, 32, 16, 16), // Source
-                            new Rectangle(Player.position.X, Player.position.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
                             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
                             Player.rotation,
                             Color.WHITE);
@@ -167,7 +167,7 @@ public class Textures
         }
         //Vertical
         Rectangle rec = rects[0];
-        rec.x = Player.position.X - Player.playerSize / 2 + shrink;
+        rec.x = Player.playerPos.X - Player.playerSize / 2 + shrink;
         rec.y = 0;
         rec.width = Player.playerSize - (shrink * 2);
         rec.height = Program.h;
@@ -177,7 +177,7 @@ public class Textures
         //Horizontal
         Rectangle rec2 = rects[1];
         rec2.x = 0;
-        rec2.y = Player.position.Y - Player.playerSize / 2 + shrink;
+        rec2.y = Player.playerPos.Y - Player.playerSize / 2 + shrink;
         rec2.width = Program.w;
         rec2.height = Player.playerSize - (shrink * 2);
         rects[1] = rec2;

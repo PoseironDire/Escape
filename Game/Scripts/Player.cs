@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using Raylib_cs;
 
@@ -8,32 +9,35 @@ public class Player
     public static float speed = 7.5f;
     public static int playerSize = 100;
     public static float rotation;
-    public static Vector2 position = new Vector2(Program.w / 2, Program.h / 2);
-    public static int x = (int)position.X;
-    public static int y = (int)position.Y;
-    public string scoreCounter = "0";
-    public float score = 0;
+    public static Vector2 playerPos = new Vector2(Program.w / 2, 100);
+    public static Vector2 scorePos = new Vector2(Program.w / 2, Program.h / 2);
+    public static int x = (int)playerPos.X;
+    public static int y = (int)playerPos.Y;
+    public static int score = 0;
+    public string scoreCounter = Convert.ToString(score);
+
+    //Points System
+    public void Points()
+    {
+        bool areOverlapping = Raylib.CheckCollisionCircles(Bot.botPos, playerSize * 2, playerPos, playerSize / 2);
+        if (areOverlapping == true && Program.State == "Game")
+        {
+            score++;
+            scoreCounter = Convert.ToString(score);
+        }
+        else if (Program.State == "Lose" || Program.State == "Win")
+        {
+            Raylib.DrawText(scoreCounter, x - 12, y - 100, 50, Color.BLACK);
+        }
+    }
 
     //Draw The DAMN Player
     public void Draw()
     {
         //Draw Player
         Raylib.DrawCircle(x, y, playerSize / 2, Color.BLANK);
-        x = (int)position.X;
-        y = (int)position.Y;
-    }
-    public void Points()
-    {
-        //Score System
-
-        float distance = position.X - Bot.position2.X;
-        if (distance < 0)
-        {
-            distance *= -1;
-        }
-        Raylib.DrawText(scoreCounter, x - 12, y - 100, 50, Color.BLACK);
-
-        score += 0.1f * distance;
+        x = (int)playerPos.X;
+        y = (int)playerPos.Y;
     }
 
     //Reset Texture

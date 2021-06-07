@@ -5,30 +5,33 @@ using Raylib_cs;
 public class Menu
 {
     //Start Button
-    public static Vector2 playButton = new Vector2(Program.w / 2, Program.h / 2);
+    public static Vector2 playButton = new Vector2(Program.w / 2, Program.h / 2 - 150);
     public static float playButtonSize = 200;
     public static bool playButtonSelected;
     public static bool queStart;
 
     //Guide Button
-    public static Vector2 guideButton = new Vector2(Program.w / 2, Program.h - 200);
+    public static Vector2 guideButton = new Vector2(Program.w / 2, Program.h / 2 + 150);
     public static float guideButtonSize = 200;
     public static bool guideButtonSelected;
     public static bool queTrans;
 
     public static int startDelayMaxValue = 10;
     public static int startDelayCurrentValue = 10;
-    public static int cursorX = (int)Program.mousePos.X;
-    public static int cursorY = (int)Program.mousePos.Y;
 
     Textures Texture = new Textures();
+
+    //Mouse Cursor
+    public void Cursor()
+    {
+        int cursorX = (int)Program.mousePos.X;
+        int cursorY = (int)Program.mousePos.Y;
+        Raylib.DrawCircle(cursorX, cursorY, 5, Color.GREEN);
+    }
 
     //Start Menu
     public void Start()
     {
-        //Mouse Cursor
-        Raylib.DrawCircle(cursorX, cursorY, 5, Color.GREEN);
-
         //Play Button Texture
         Raylib.DrawTexturePro(
             Textures.playButtonTexture,
@@ -213,9 +216,10 @@ public class Menu
     }
     public void CheckWin()
     {
-        bool areOverlapping = Raylib.CheckCollisionCircles(Player.position, Player.playerSize / 2, Bot.position2, Player.playerSize / 2);
+        bool areOverlapping = Raylib.CheckCollisionCircles(Player.playerPos, Player.playerSize / 2, Bot.botPos, Player.playerSize / 2);
         if (areOverlapping == true)
         {
+            Assets.scannerColor = new Color(0, 0, 0, 155);
             Raylib.ClearBackground(Color.WHITE);
             Raylib.SetSoundVolume(Assets.loseSound, 1f);
             Program.State = "Lose";

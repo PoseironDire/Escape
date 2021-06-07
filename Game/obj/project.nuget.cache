@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qnQ9IQ71mHSXUp++xnUYEP1dTr4bWrAu/6h08eQfLc8xu7YrryW0eHzzocWYz2WkeN6VL6VzEK4sBcNdh4u5bQ==",
+  "dgSpecHash": "9HfLwIGlum1+D6d1VA1sb138ODUevOFDdiyWIkb4bl2Lf3rGLnH/BXQK9fO1mKJ7i+jHKsz+mXGn7bRxJrbWjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\edvin.tsygankov\\Documents\\GitHub\\Escape\\Game\\Game.csproj",
+  "projectFilePath": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\edvin.tsygankov\\.nuget\\packages\\raylib-cs\\3.7.0\\raylib-cs.3.7.0.nupkg.sha512",
-    "C:\\Users\\edvin.tsygankov\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Edvin\\.nuget\\packages\\raylib-cs\\3.7.0\\raylib-cs.3.7.0.nupkg.sha512",
+    "C:\\Users\\Edvin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
