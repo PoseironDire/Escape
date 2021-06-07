@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
 using System.Numerics;
+using System.Collections.Generic;
 using Raylib_cs;
 
 public class Program
@@ -52,18 +52,6 @@ public class Program
             if (State == "Game")
             {
                 Controller.Move();
-            }
-
-            bool areOverlapping = Raylib.CheckCollisionCircles(Player.position, Player.playerSize / 2, Bot.position2, Player.playerSize / 2);
-            if (areOverlapping == true)
-            {
-                Raylib.ClearBackground(Color.WHITE);
-                Raylib.SetSoundVolume(Assets.screamSound, 1f);
-            }
-            else
-            {
-                Raylib.SetSoundVolume(Assets.screamSound, 0f);
-                Raylib.PlaySound(Assets.screamSound);
             }
             Raylib.EndDrawing();
             UpdateVisual = true;

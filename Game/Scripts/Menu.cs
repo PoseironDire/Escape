@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System;
 using System.Numerics;
 using Raylib_cs;
@@ -78,7 +77,7 @@ public class Menu
             Textures.guideButtonTexture,
             new Rectangle(0, 0, 516, 516), // Source
             new Rectangle(guideButton.X, guideButton.Y, guideButtonSize, guideButtonSize), // Dest(ination)
-            new Vector2(guideButtonSize / 2,guideButtonSize / 2), // Origin
+            new Vector2(guideButtonSize / 2, guideButtonSize / 2), // Origin
             Player.rotation,
             Color.WHITE);
         //Select & Press Guide Button Functions
@@ -109,11 +108,25 @@ public class Menu
     }
     public void CheckWin()
     {
+        bool areOverlapping = Raylib.CheckCollisionCircles(Player.position, Player.playerSize / 2, Bot.position2, Player.playerSize / 2);
+        if (areOverlapping == true)
+        {
+            Raylib.ClearBackground(Color.WHITE);
+            Raylib.SetSoundVolume(Assets.screamSound, 1f);
+            Program.State = "Lose";
+        }
+        else
+        {
+            Raylib.SetSoundVolume(Assets.screamSound, 0f);
+            Raylib.PlaySound(Assets.screamSound);
+        }
+
         int distance = Player.x - Bot.x2;
 
         if (distance < 0)
         {
             distance *= -1;
         }
+        Console.WriteLine(distance);
     }
 }
