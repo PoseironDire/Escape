@@ -18,4 +18,13 @@ public class Player
         //Draw Player
         Raylib.DrawCircle(x, y, playerSize / 2, Color.BLANK);
     }
+
+    //Reset Texture
+    public void DrawReset()
+    {
+        PlayerMovement.movDown = false;
+        PlayerMovement.movLeft = false;
+        PlayerMovement.movRight = false;
+        PlayerMovement.movUp = false;
+    }
 }

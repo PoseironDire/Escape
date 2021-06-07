@@ -10,7 +10,6 @@ public class Program
     public static string State = "Start";
     public static bool UpdateVisual;
     public static Random generator = new Random();
-    public static List<Rectangle> rects = new List<Rectangle>();
     public static Vector2 mousePos = Raylib.GetMousePosition();
 
     public static void Main(string[] args)
@@ -29,10 +28,10 @@ public class Program
         PlayerMovement Controller = new PlayerMovement();
         Textures Texture = new Textures();
 
-        rects.Add(new Rectangle());
-
         while (!Raylib.WindowShouldClose())
         {
+            Textures.rects.Add(new Rectangle());
+            Textures.rects.Add(new Rectangle());
             mousePos = Raylib.GetMousePosition();
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Assets.bg);
@@ -42,16 +41,22 @@ public class Program
                 Menus.Start();
                 Texture.Steve();
             }
+            else if (State == "Game")
+            {
+                Controller.Move();
+            }
+            else if (State == "Lose" || State == "Win")
+            {
+                Texture.Crosser();
+                P1.DrawReset();
+            }
+
             if (State != "Start")
             {
                 P1.Draw();
                 Bot.AI();
-                Texture.ShowPlayer();
                 Menus.CheckWin();
-            }
-            if (State == "Game")
-            {
-                Controller.Move();
+                Texture.ShowPlayer();
             }
             Raylib.EndDrawing();
             UpdateVisual = true;

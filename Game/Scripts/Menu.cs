@@ -112,13 +112,13 @@ public class Menu
         if (areOverlapping == true)
         {
             Raylib.ClearBackground(Color.WHITE);
-            Raylib.SetSoundVolume(Assets.screamSound, 1f);
+            Raylib.SetSoundVolume(Assets.loseSound, 1f);
             Program.State = "Lose";
         }
         else
         {
-            Raylib.SetSoundVolume(Assets.screamSound, 0f);
-            Raylib.PlaySound(Assets.screamSound);
+            Raylib.SetSoundVolume(Assets.loseSound, 0f);
+            Raylib.PlaySound(Assets.loseSound);
         }
 
         int distance = Player.x - Bot.x2;

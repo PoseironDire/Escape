@@ -25,37 +25,40 @@ public class PlayerMovement
         }
 
         //Texture References
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
+        if (Program.State != "Lose" || Program.State != "Win")
         {
-            movUp = true;
-        }
-        else
-        {
-            movUp = false;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
-        {
-            movLeft = true;
-        }
-        else
-        {
-            movLeft = false;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
-        {
-            movDown = true;
-        }
-        else
-        {
-            movDown = false;
-        }
-        if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
-        {
-            movRight = true;
-        }
-        else
-        {
-            movRight = false;
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
+            {
+                movUp = true;
+            }
+            else
+            {
+                movUp = false;
+            }
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
+            {
+                movLeft = true;
+            }
+            else
+            {
+                movLeft = false;
+            }
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
+            {
+                movDown = true;
+            }
+            else
+            {
+                movDown = false;
+            }
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
+            {
+                movRight = true;
+            }
+            else
+            {
+                movRight = false;
+            }
         }
     }
 }

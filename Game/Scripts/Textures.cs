@@ -1,4 +1,6 @@
+using System;
 using System.Numerics;
+using System.Collections.Generic;
 using Raylib_cs;
 
 public class Textures
@@ -140,5 +142,47 @@ public class Textures
     {
         int spasm = Program.generator.Next(10);
         Textures.steveModifier += spasm;
+    }
+
+    public static List<Rectangle> rects = new List<Rectangle>();
+    public static int shrink = 0;
+    public static int tint = 255;
+    bool flash = true;
+    public void Crosser()
+    {
+        Color crosser = new Color(Textures.tint, 0, 0, 255);
+        if (Program.State == "Lose" && flash == true)
+        {
+            flash = false;
+            if (tint > 10)
+            {
+                tint -= 10;
+            }
+            shrink += 12;
+        }
+        else if (Program.State == "Lose" && flash == false)
+        {
+            shrink -= 8;
+            flash = true;
+        }
+        //Vertical
+        Rectangle rec = rects[0];
+        rec.x = Player.position.X - Player.playerSize / 2 + shrink;
+        rec.y = 0;
+        rec.width = Player.playerSize - (shrink * 2);
+        rec.height = Program.h;
+        rects[0] = rec;
+        Raylib.DrawRectangleRec(rec, crosser);
+
+        //Horizontal
+        Rectangle rec2 = rects[1];
+        rec2.x = 0;
+        rec2.y = Player.position.Y - Player.playerSize / 2 + shrink;
+        rec2.width = Program.w;
+        rec2.height = Player.playerSize - (shrink * 2);
+        rects[1] = rec2;
+        Raylib.DrawRectangleRec(rec2, crosser);
+
+
     }
 }
