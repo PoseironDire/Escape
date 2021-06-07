@@ -34,11 +34,16 @@ public class Program
             Textures.rects.Add(new Rectangle());
             mousePos = Raylib.GetMousePosition();
             Raylib.BeginDrawing();
-            Raylib.ClearBackground(Assets.bg);
+            Raylib.ClearBackground(Assets.startBG);
 
             if (State == "Start")
             {
                 Menus.Start();
+                Texture.Steve();
+            }
+            if (State == "Guide")
+            {
+                Menus.Guide();
                 Texture.Steve();
             }
             else if (State == "Game")
@@ -51,12 +56,13 @@ public class Program
                 P1.DrawReset();
             }
 
-            if (State != "Start")
+            if (State != "Start" && State != "Guide")
             {
                 P1.Draw();
-                Bot.AI();
-                Menus.CheckWin();
                 Texture.ShowPlayer();
+                Bot.AI();
+                P1.Points();
+                Menus.CheckWin();
             }
             Raylib.EndDrawing();
             UpdateVisual = true;
