@@ -24,6 +24,18 @@ public class PlayerMovement
             Player.playerPos.X += Player.speed;
         }
 
+        //Speed Increase
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+        {
+            Player.speed = 5;
+            Player.playerSize = 120;
+        }
+        else
+        {
+            Player.speed = 12.5f;
+            Player.playerSize = 100;
+        }
+
         //Texture References
         if (Program.State != "Lose" || Program.State != "Win")
         {

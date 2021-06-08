@@ -10,6 +10,7 @@ public class Bot
     public static int y2 = (int)botPos.Y;
     public static int x3 = (int)scannerPos.X;
     public static int y3 = (int)scannerPos.Y;
+    public static int botSize = 100;
     public static bool resetPos = false;
     public static Vector2 getBotPos = new Vector2();
     public static Vector2 botMovement = new Vector2();
@@ -69,25 +70,25 @@ public class Bot
                 resetPos = false;
             }
 
-            if (botPos.X < Player.playerSize / 2)
+            if (botPos.X < botSize / 2)
             {
                 resetPos = true;
                 getBotPos.X = x2;
                 botMovement.X = ((getBotPos.X / Program.w) + 15);
             }
-            if (botPos.X > Program.w - Player.playerSize / 2)
+            if (botPos.X > Program.w - botSize / 2)
             {
                 resetPos = true;
                 getBotPos.X = x2;
                 botMovement.X = ((getBotPos.X / Program.w) - 15);
             }
-            if (botPos.Y < Player.playerSize / 2)
+            if (botPos.Y < botSize / 2)
             {
                 resetPos = true;
                 getBotPos.Y = y2;
                 botMovement.Y = ((getBotPos.Y / Program.h) + 15);
             }
-            if (botPos.Y > Program.h - Player.playerSize / 2)
+            if (botPos.Y > Program.h - botSize / 2)
             {
                 resetPos = true;
                 getBotPos.Y = y2;
@@ -99,14 +100,14 @@ public class Bot
         float moveSpeed = BotMovement(botMovement.X, botMovement.Y);
 
         //Draw Bot
-        Raylib.DrawCircle(x2, y2, (Player.playerSize + (moveSpeed * 2)) * 2, Assets.botRadarColor);
-        Raylib.DrawCircle(x2, y2, Player.playerSize / 2, Assets.botColor);
+        Raylib.DrawCircle(x2, y2, (botSize + (moveSpeed * 6)) * 2, Assets.botRadarColor);
+        Raylib.DrawCircle(x2, y2, botSize / 2, Assets.botColor);
 
         //Draw Scanner
-        bool areOverlapping = Raylib.CheckCollisionCircles(botPos, (Player.playerSize + (moveSpeed * 2)) * 2, Player.playerPos, Player.playerSize / 2);
+        bool areOverlapping = Raylib.CheckCollisionCircles(botPos, (botSize + (moveSpeed * 6)) * 2, Player.playerPos, Player.playerSize / 2);
         if (areOverlapping == true)
         {
-            Raylib.DrawCircle(x3, y3, Player.playerSize / 4, Assets.scannerColor);
+            Raylib.DrawCircle(x3, y3, botSize / 4, Assets.scannerColor);
         }
     }
 }

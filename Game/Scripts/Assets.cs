@@ -8,6 +8,7 @@ public class Assets
     public static Sound guideButtonSelectSound = Raylib.LoadSound("Sounds/guideSelect.wav");
     public static Sound guideSound = Raylib.LoadSound("Sounds/guide.wav");
     public static Sound loseSound = Raylib.LoadSound("Sounds/lose.wav");
+    public static Sound lose2Sound = Raylib.LoadSound("Sounds/lose.wav");
     //Colors
     public static Color startBG = new Color(50, 50, 50, 255);
     public static Color startBGLighter = new Color(70, 70, 70, 255);

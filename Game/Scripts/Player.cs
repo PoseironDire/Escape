@@ -25,8 +25,10 @@ public class Player
         {
             Assets.textColor = new Color(255, 255, 255, 255);
             counter++;
-            if (counter! >= 60)
+            if (counter! >= 15)
             {
+                Raylib.SetSoundVolume(Assets.lose2Sound, 0.2f);
+                Raylib.PlaySound(Assets.lose2Sound);
                 score++;
                 scoreCounter = Convert.ToString(score);
                 counter = 0;
@@ -50,8 +52,6 @@ public class Player
     //Player
     public void User()
     {
-
-        //Draw Player
         Raylib.DrawCircle(x, y, playerSize / 2, Color.BLANK);
         x = (int)playerPos.X;
         y = (int)playerPos.Y;
