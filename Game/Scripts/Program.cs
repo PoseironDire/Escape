@@ -12,6 +12,25 @@ public class Program
     public static Random generator = new Random();
     public static Vector2 mousePos = Raylib.GetMousePosition();
 
+    public static void Reset()
+    {
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_R))
+        {
+            Player.score = 0;
+            Player.scoreCounter = Convert.ToString(Player.score);
+            Player.counter = 0;
+            Player.playerPos = new Vector2(100, Program.h / 2);
+
+
+            Player.x = (int)Player.playerPos.X;
+            Player.y = (int)Player.playerPos.Y;
+            Bot.botPos = new Vector2(Program.w - 100, Program.h / 2);
+            Textures.stevePos = new Vector2(Program.w / 2, Program.h - 200);
+            Bot.resetPos = false;
+            State = "Start";
+        }
+    }
+
     public static void Main(string[] args)
     {
 
@@ -56,20 +75,21 @@ public class Program
             else if (State == "Lose")
             {
                 P1.Points();
+                P1.TextureReset();
                 Texture.Crosser();
-                P1.DrawReset();
+                Reset();
             }
             else if (State == "Win")
             {
                 P1.Points();
                 Texture.Crosser();
-                P1.DrawReset();
+                P1.TextureReset();
             }
 
             if (State != "Start" && State != "Guide")
             {
                 P1.Points();
-                P1.Draw();
+                P1.User();
                 Texture.ShowPlayer();
                 Bot.AI();
                 Menus.CheckWin();

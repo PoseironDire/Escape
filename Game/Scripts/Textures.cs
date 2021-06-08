@@ -20,106 +20,102 @@ public class Textures
     public void ShowPlayer()
     {
         //Static
-        if (PlayerMovement.movDown == false && PlayerMovement.movUp == false && PlayerMovement.movLeft == false && PlayerMovement.movRight == false)
+
+        Raylib.DrawTexturePro(
+        playerTexture,
+        new Rectangle(0, 0, 16, 16), // Source
+        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+        Player.rotation,
+        Color.WHITE);
+
+        //Right
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && !Raylib.IsKeyDown(KeyboardKey.KEY_A))
         {
             Raylib.DrawTexturePro(
             playerTexture,
-            new Rectangle(0, 0, 16, 16), // Source
+            new Rectangle(16, 0, 16, 16), // Source
             new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
             new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
             Player.rotation,
             Color.WHITE);
         }
-        else
+        //Left
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && !Raylib.IsKeyDown(KeyboardKey.KEY_D))
         {
-            //Right
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
-            {
-                Raylib.DrawTexturePro(
-                playerTexture,
-                new Rectangle(16, 0, 16, 16), // Source
-                new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                Player.rotation,
-                Color.WHITE);
-            }
-            //Left
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
-            {
-                Raylib.DrawTexturePro(
-                            playerTexture,
-                            new Rectangle(32, 0, 16, 16), // Source
-                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                            Player.rotation,
-                            Color.WHITE);
-            }
-            //Up
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
-            {
-                Raylib.DrawTexturePro(
-                            playerTexture,
-                            new Rectangle(0, 16, 16, 16), // Source
-                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                            Player.rotation,
-                            Color.WHITE);
-            }
-            //Down
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
-            {
-                Raylib.DrawTexturePro(
-                            playerTexture,
-                            new Rectangle(16, 16, 16, 16), // Source
-                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                            Player.rotation,
-                            Color.WHITE);
-            }
-            //Up Right
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && Raylib.IsKeyDown(KeyboardKey.KEY_W))
-            {
-                Raylib.DrawTexturePro(
-                playerTexture,
-                new Rectangle(32, 16, 16, 16), // Source
-                new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                Player.rotation,
-                Color.WHITE);
-            }
-            //Up Left
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && Raylib.IsKeyDown(KeyboardKey.KEY_W))
-            {
-                Raylib.DrawTexturePro(
-                            playerTexture,
-                            new Rectangle(0, 32, 16, 16), // Source
-                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                            Player.rotation,
-                            Color.WHITE);
-            }
-            //Down Right
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && Raylib.IsKeyDown(KeyboardKey.KEY_S))
-            {
-                Raylib.DrawTexturePro(
-                            playerTexture,
-                            new Rectangle(16, 32, 16, 16), // Source
-                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                            Player.rotation,
-                            Color.WHITE);
-            }
-            //Down Left
-            if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && Raylib.IsKeyDown(KeyboardKey.KEY_S))
-            {
-                Raylib.DrawTexturePro(
-                            playerTexture,
-                            new Rectangle(32, 32, 16, 16), // Source
-                            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
-                            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
-                            Player.rotation,
-                            Color.WHITE);
-            }
+            Raylib.DrawTexturePro(
+                        playerTexture,
+                        new Rectangle(32, 0, 16, 16), // Source
+                        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+                        Player.rotation,
+                        Color.WHITE);
+        }
+        //Up
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_W) && !Raylib.IsKeyDown(KeyboardKey.KEY_S))
+        {
+            Raylib.DrawTexturePro(
+                        playerTexture,
+                        new Rectangle(0, 16, 16, 16), // Source
+                        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+                        Player.rotation,
+                        Color.WHITE);
+        }
+        //Down
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_S) && !Raylib.IsKeyDown(KeyboardKey.KEY_W))
+        {
+            Raylib.DrawTexturePro(
+                        playerTexture,
+                        new Rectangle(16, 16, 16, 16), // Source
+                        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+                        Player.rotation,
+                        Color.WHITE);
+        }
+        //Up Right
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && Raylib.IsKeyDown(KeyboardKey.KEY_W) && !Raylib.IsKeyDown(KeyboardKey.KEY_A) && !Raylib.IsKeyDown(KeyboardKey.KEY_S))
+        {
+            Raylib.DrawTexturePro(
+            playerTexture,
+            new Rectangle(32, 16, 16, 16), // Source
+            new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+            new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+            Player.rotation,
+            Color.WHITE);
+        }
+        //Up Left
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && Raylib.IsKeyDown(KeyboardKey.KEY_W) && !Raylib.IsKeyDown(KeyboardKey.KEY_D) && !Raylib.IsKeyDown(KeyboardKey.KEY_S))
+        {
+            Raylib.DrawTexturePro(
+                        playerTexture,
+                        new Rectangle(0, 32, 16, 16), // Source
+                        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+                        Player.rotation,
+                        Color.WHITE);
+        }
+        //Down Right
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_D) && Raylib.IsKeyDown(KeyboardKey.KEY_S) && !Raylib.IsKeyDown(KeyboardKey.KEY_A) && !Raylib.IsKeyDown(KeyboardKey.KEY_W))
+        {
+            Raylib.DrawTexturePro(
+                        playerTexture,
+                        new Rectangle(16, 32, 16, 16), // Source
+                        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+                        Player.rotation,
+                        Color.WHITE);
+        }
+        //Down Left
+        if (Raylib.IsKeyDown(KeyboardKey.KEY_A) && Raylib.IsKeyDown(KeyboardKey.KEY_S) && !Raylib.IsKeyDown(KeyboardKey.KEY_D) && !Raylib.IsKeyDown(KeyboardKey.KEY_W))
+        {
+            Raylib.DrawTexturePro(
+                        playerTexture,
+                        new Rectangle(32, 32, 16, 16), // Source
+                        new Rectangle(Player.playerPos.X, Player.playerPos.Y, Player.playerSize, Player.playerSize), // Dest(ination)
+                        new Vector2(Player.playerSize / 2, Player.playerSize / 2), // Origin
+                        Player.rotation,
+                        Color.WHITE);
         }
     }
     //Shitpost

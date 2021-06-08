@@ -126,8 +126,8 @@ public class Menu
     {
         Raylib.ClearBackground(Assets.guideBG);
         Raylib.DrawText("Don't Get Caught!", Program.w / 2 - 175, 125, 40, Color.BLACK);
-        Raylib.DrawText("Use: W,A,S,D!", Program.w / 2 - 125, Program.h / 2 - 25, 40, Color.BLACK);
-        Raylib.DrawText("But Try To Stay Close To The Enemy!", Program.w / 2 - 375, Program.h - 125, 40, Color.BLACK);
+        Raylib.DrawText("Use: W,A,S,D!", Program.w / 2 - 130, Program.h / 2 - 25, 40, Color.BLACK);
+        Raylib.DrawText("Try To Stay Close To The Enemy!", Program.w / 2 - 355, Program.h - 125, 40, Color.BLACK);
         Raylib.DrawText("You", Player.x - 45, Player.y + 60, 50, Color.BLACK);
         Raylib.DrawText("Enemy", Bot.x2 - 75, Bot.y2 + 60, 50, Color.BLACK);
 
