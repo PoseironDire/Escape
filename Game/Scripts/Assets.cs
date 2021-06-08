@@ -16,4 +16,5 @@ public class Assets
     public static Color botColor = new Color(200, 0, 0, 255);
     public static Color botRadarColor = new Color(200, 0, 0, 100);
     public static Color scannerColor = new Color(200, 100, 0, 255);
+    public static Color textColor = new Color(0, 0, 0, 255);
 }
