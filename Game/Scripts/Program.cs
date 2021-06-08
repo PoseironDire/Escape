@@ -14,6 +14,7 @@ public class Program
 
     public static void Main(string[] args)
     {
+
         Raylib.InitWindow(w, h, "");
         Raylib.InitAudioDevice();
         Raylib.SetMasterVolume(1.0f);

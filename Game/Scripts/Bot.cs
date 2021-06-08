@@ -4,7 +4,7 @@ using Raylib_cs;
 public class Bot
 {
     // Bot & Scanner settings
-    public static Vector2 botPos = new Vector2(Program.w / 2, Program.h - 100);
+    public static Vector2 botPos = new Vector2(Program.w - 100, Program.h / 2);
     public static Vector2 scannerPos = new Vector2();
     public static int x2 = (int)botPos.X;
     public static int y2 = (int)botPos.Y;
@@ -21,7 +21,6 @@ public class Bot
         y2 = (int)botPos.Y;
         x3 = (int)scannerPos.X;
         y3 = (int)scannerPos.Y;
-
 
         //Bot Movement
         if (Program.State == "Game")

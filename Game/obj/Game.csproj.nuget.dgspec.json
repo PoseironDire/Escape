@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj": {}
+    "C:\\Users\\edvin.tsygankov\\Documents\\GitHub\\Escape\\Game\\Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj": {
+    "C:\\Users\\edvin.tsygankov\\Documents\\GitHub\\Escape\\Game\\Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
+        "projectUniqueName": "C:\\Users\\edvin.tsygankov\\Documents\\GitHub\\Escape\\Game\\Game.csproj",
         "projectName": "Game",
-        "projectPath": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\Game.csproj",
-        "packagesPath": "C:\\Users\\Edvin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Edvin\\Documents\\Programming\\Escape\\Game\\obj\\",
+        "projectPath": "C:\\Users\\edvin.tsygankov\\Documents\\GitHub\\Escape\\Game\\Game.csproj",
+        "packagesPath": "C:\\Users\\edvin.tsygankov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\edvin.tsygankov\\Documents\\GitHub\\Escape\\Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Edvin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\edvin.tsygankov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

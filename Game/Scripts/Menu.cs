@@ -125,12 +125,17 @@ public class Menu
     public void Guide()
     {
         Raylib.ClearBackground(Assets.guideBG);
+        Raylib.DrawText("Don't Get Caught!", Program.w / 2 - 175, 125, 40, Color.BLACK);
+        Raylib.DrawText("Use: W,A,S,D!", Program.w / 2 - 125, Program.h / 2 - 25, 40, Color.BLACK);
+        Raylib.DrawText("But Try To Stay Close To The Enemy!", Program.w / 2 - 375, Program.h - 125, 40, Color.BLACK);
+        Raylib.DrawText("You", Player.x - 45, Player.y + 60, 50, Color.BLACK);
+        Raylib.DrawText("Enemy", Bot.x2 - 75, Bot.y2 + 60, 50, Color.BLACK);
 
         //Play Button Texture
         Raylib.DrawTexturePro(
             Textures.playButtonTexture,
             new Rectangle(0, 0, 512, 512), // Source
-            new Rectangle(playButton.X, playButton.Y, playButtonSize, playButtonSize), // Dest(ination)
+            new Rectangle(playButton.X, playButton.Y, playButtonSize, playButtonSize), // Destination
             new Vector2(playButtonSize / 2, playButtonSize / 2), // Origin
             Player.rotation,
             Color.WHITE);
@@ -148,7 +153,7 @@ public class Menu
         {
             Raylib.SetSoundVolume(Assets.playSound, 1f);
             Raylib.SetSoundVolume(Assets.playButtonSelectSound, 1f);
-            Raylib.ClearBackground(Assets.startBGLighter);
+            Raylib.ClearBackground(Assets.guideBGLighter);
             playButtonSize = 250;
             Texture.IntentionalBug();
         }

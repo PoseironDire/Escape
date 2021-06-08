@@ -9,12 +9,12 @@ public class Player
     public static float speed = 7.5f;
     public static int playerSize = 100;
     public static float rotation;
-    public static Vector2 playerPos = new Vector2(Program.w / 2, 100);
+    public static Vector2 playerPos = new Vector2(100, Program.h / 2);
     public static Vector2 scorePos = new Vector2(Program.w / 2, Program.h / 2);
     public static int x = (int)playerPos.X;
     public static int y = (int)playerPos.Y;
     public static int score = 0;
-    public string scoreCounter = Convert.ToString(score);
+    public static string scoreCounter = Convert.ToString(score);
 
     //Points System
     public void Points()
